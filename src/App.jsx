@@ -10,13 +10,6 @@ function App() {
     setSort(event.target.value);
   }
 
-  const handleChange = (event) => {
-    setFormState({
-      ...formState,
-      [event.target.name]: event.target.value,
-    });
-  }
-
   const handleCreateItem = (item) => {
     setItems([...items, item]);
   }
@@ -46,6 +39,9 @@ function App() {
   .map(item => {
     return <TodoItem key={item.id} id={item.id} done={item.done} text={item.text} createdAt={item.createdAt} onDeleteItem={handleDeleteItem} onMarkItemAsDone={handleMarkItemAsDone} />
   });
+  function deleteAll() {
+    setItems([]);
+  }
 
   return (
      <div>
@@ -56,6 +52,7 @@ function App() {
         <option value="createdAtDesc">Created at (Descending)</option>
       </select>
       {itemComponents}
+      <button onClick={deleteAll}>Delete all</button>
     </div> 
   );
 }
