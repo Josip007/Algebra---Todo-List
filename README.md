@@ -14,5 +14,5 @@ Install Node 14+.
 - [x] Remove todo item
 - [x] Mark todo item as done
 - [x] Sort by date
-- [x] Filter by name
+- [ ] Filter by name
 
